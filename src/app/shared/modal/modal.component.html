@@ -1,0 +1,16 @@
+<div class="modal-header">
+    <h4 class="modal-title" id="modal-basic-title">Profile update</h4>
+    <button type="button" class="btn-close" aria-label="Close" (click)="activateModal.dismiss('Cross click')"></button>
+</div>
+<div class="modal-body">
+    <form>
+        <span class="p-text-secondary block mb-5">Update your information.</span>
+        <div class="flex align-items-center gap-3 mb-5">
+            <label for="email" class="font-semibold w-6rem">Email</label>
+            <input  id="email" class="flex-auto form-control" autocomplete="off" />
+        </div>
+    </form>
+</div>
+<div class="modal-footer">
+    <button type="button" class="btn btn-outline-secondary" (click)="activateModal.close('Save click')">Save</button>
+</div>

@@ -1,0 +1,60 @@
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">
+          <i class="fas fa-chart-line"></i> MyDashboard
+        </a>
+        <button class="navbar-toggler" (click)="open(content)" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="#">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" [routerLink]="'/home/inicio'" >Inicio</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" [routerLink]="'/home/data'">Información</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  
+
+
+
+<ng-template #content let-offcanvas>
+	<div class="offcanvas-header">
+		<h4 class="offcanvas-title" id="offcanvas-basic-title">Profile update</h4>
+		<button type="button" class="btn-close" aria-label="Close" (click)="offcanvas.dismiss('Cross click')"></button>
+	</div>
+	<div class="offcanvas-body">
+		<form>
+			<div class="mb-3">
+				<label for="dateOfBirth">Date of birth</label>
+				<div class="input-group">
+					<input
+						id="dateOfBirth"
+						class="form-control"
+						placeholder="yyyy-mm-dd"
+						name="dp"
+						ngbDatepicker
+						#dp="ngbDatepicker"
+					/>
+					<button class="btn btn-outline-secondary bi bi-calendar3" (click)="dp.toggle()" type="button"></button>
+				</div>
+			</div>
+		</form>
+		<div class="text-end">
+			<button type="button" class="btn btn-outline-secondary" (click)="offcanvas.close('Save click')">Save</button>
+		</div>
+	</div>
+</ng-template>
+
+
+<div class="container pt-2">
+    <router-outlet></router-outlet>
+</div>
